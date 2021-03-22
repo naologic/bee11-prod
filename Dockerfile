@@ -1,4 +1,4 @@
-FROM node:14.16.0-alpine3.10
+FROM node:15.12.0
 LABEL maintainer="Naologic <contact@naologic.com>"
 LABEL org.label-schema.name="BOB"
 LABEL org.label-schema.description="BOB data container"
@@ -11,19 +11,19 @@ RUN mkdir -p /var/nao
 RUN mkdir -p /etc/pm2-web
 WORKDIR /var/nao
 
-RUN apt update && \
-  apt install -y nano libgtk2.0-0 libgtk-3-0 libnotify-dev \
+RUN apt-get update && \
+  apt-get install -y nano libgtk2.0-0 libgtk-3-0 libnotify-dev \
   libgconf-2-4 libnss3 libxss1 \
   libasound2 libxtst6 xauth musl musl-dev xvfb \
   libgbm-dev
 
 # OLDER
-RUN apt update \
-    && apt install -y wget gnupg \
+RUN apt-get update \
+    && apt-get install -y wget gnupg \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
-    && apt update \
-    && apt install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 \
+    && apt-get update \
+    && apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 \
       --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
