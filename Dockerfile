@@ -1,4 +1,4 @@
-FROM node:15.12.0
+FROM node:15.14.0-alpine
 LABEL maintainer="Naologic <contact@naologic.com>"
 LABEL org.label-schema.name="BOB"
 LABEL org.label-schema.description="BOB data container"
