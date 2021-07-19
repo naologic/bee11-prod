@@ -13,7 +13,7 @@ WORKDIR /var/nao
 
 RUN apt-get update && \
   apt-get install -y nano libgtk2.0-0 libgtk-3-0 libnotify-dev \
-  libgconf-2-4 libnss3 libxss1 automake autoconf unixodbc unixodbc-dev freetds-dev \
+  libgconf-2-4 libnss3 libxss1 automake autoconf unixodbc unixodbc-dev freetds-dev lsb-release \
   libasound2 libxtst6 xauth musl musl-dev xvfb \
   libgbm-dev
 
